@@ -1,12 +1,14 @@
 import React from "react";
-import Hero from "../components/Hero"; // existing
-import About from "../components/About"; // NEW
+import Hero from "../components/Hero";
+import About from "../components/About";
+import Skills from "../components/Skills";
 
 const Home = () => {
   return (
     <div>
-      <Hero /> {/* existing */}
-      <About /> {/* ADD THIS */}
+      <Hero />
+      <About />
+      <Skills />
     </div>
   );
 };
