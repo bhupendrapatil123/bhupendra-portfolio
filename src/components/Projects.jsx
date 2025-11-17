@@ -8,7 +8,7 @@ const projects = [
     title: "Stock Trading Platform",
     description:
       "A full-stack MERN virtual trading platform with orders, funds, watchlist and charts.",
-    image: "/src/assets/stock.png",
+    image: "/stock.png",
     tech: ["React", "Node.js", "MongoDB", "Tailwind", "Redux"],
     demo: "https://stock-trading-platform-puce.vercel.app",
     github: "https://github.com/bhupendrapatil123/Stock-Trading-Platform",
@@ -17,7 +17,7 @@ const projects = [
     title: "Bookstore Web App",
     description:
       "MERN bookstore app with authentication, cart, checkout, and admin dashboard.",
-    image: "/src/assets/bookstore.png",
+    image: "/bookstore.png",
     tech: ["React", "Express", "MongoDB", "JWT", "Redux"],
     demo: "https://book-store-camp.vercel.app/",
     github: "https://github.com/bhupendrapatil123/bookStoreApp",
@@ -26,7 +26,7 @@ const projects = [
     title: "Wanderlust",
     description:
       "Travel listing website inspired by Airbnb with full CRUD and authentication.",
-    image: "/src/assets/wanderlust.png",
+    image: "/wanderlust.png",
     tech: ["HTML", "CSS", "Node.js", "Express", "MongoDB"],
     demo: "https://wanderlust-app-demo.vercel.app",
     github: "https://github.com/bhupendrapatil123/Wanderlust-Project",
