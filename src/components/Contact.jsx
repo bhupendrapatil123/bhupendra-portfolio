@@ -1,13 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
-import {
-  FaEnvelope,
-  FaGithub,
-  FaMapMarkerAlt,
-  FaPhone,
-  FaTwitter,
-} from "react-icons/fa";
-import { FaLinkedin } from "react-icons/fa6";
+import { FaEnvelope, FaGithub, FaMapMarkerAlt, FaPhone } from "react-icons/fa";
+import { FaLinkedin, FaXTwitter } from "react-icons/fa6";
 
 const Contact = () => {
   return (
@@ -108,27 +102,27 @@ const Contact = () => {
               <h3 className="text-lg font-semibold mb-4">Follow Me</h3>
               <div className="flex space-x-4">
                 <a
-                  href="https://github.com/your-github"
+                  href="https://github.com/bhupendrapatil123"
                   target="_blank"
-                  className="w-12 h-12 rounded-full bg-dark-300 flex items-center justify-center hover:bg-purple hover:text-white transition"
+                  className="w-12 h-12 rounded-full bg-dark-300 flex items-center justify-center hover:bg-black hover:text-white transition"
                 >
                   <FaGithub />
                 </a>
 
                 <a
-                  href="https://linkedin.com/in/your-profile"
+                  href="https://www.linkedin.com/in/patil-bhupendra"
                   target="_blank"
-                  className="w-12 h-12 rounded-full bg-dark-300 flex items-center justify-center text-blue-400 hover:bg-blue-400 hover:text-white transition"
+                  className="w-12 h-12 rounded-full bg-dark-300 flex items-center justify-center text-blue-400 hover:bg-black hover:text-white transition"
                 >
                   <FaLinkedin />
                 </a>
 
                 <a
-                  href="https://twitter.com/your-twitter"
+                  href="https://x.com/BhupendraR97314"
                   target="_blank"
-                  className="w-12 h-12 rounded-full bg-dark-300 flex items-center justify-center text-blue-400 hover:bg-blue-400 hover:text-white transition"
+                  className="w-12 h-12 rounded-full bg-dark-300 flex items-center justify-center text-white hover:bg-black hover:text-white transition"
                 >
-                  <FaTwitter />
+                  <FaXTwitter />
                 </a>
               </div>
             </div>
