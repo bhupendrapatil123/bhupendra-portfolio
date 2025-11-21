@@ -1,69 +1,116 @@
+// src/components/Hero.jsx
 import React from "react";
 import { motion } from "framer-motion";
 import { assets } from "../assets/assets";
+import StarfieldCanvas from "./StarfieldCanvas";
 
 const Hero = () => {
+  const textVariants = {
+    hidden: { opacity: 0, y: 40 },
+    show: { opacity: 1, y: 0, transition: { duration: 0.7, ease: "easeOut" } },
+  };
+
+  const floatAnimation = {
+    y: [0, -15, 0],
+    transition: { duration: 4, repeat: Infinity, ease: "easeInOut" },
+  };
+
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 50 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6, ease: "easeOut" }}
-      viewport={{ once: true }}
+    <section
       id="home"
-      className="min-h-screen flex items-center pt-20 pb-16 bg-gradient-to-r from-[#1a1a1a] via-[#2d2d2d] to-[#1a1a1a]"
+      className="relative min-h-screen flex items-center pt-20 pb-16 overflow-hidden"
     >
-      <div className="container mx-auto px-6 flex flex-col md:flex-row items-center justify-between">
-        {/* left side content */}
-        <div className="md:w-1/2 mb-10 md:mb-0">
-          <h1 className="text-4xl md:text-6xl font-bold mb-4">
+      {/* STARFIELD CANVAS */}
+      <StarfieldCanvas speed={0.25} starCount={160} />
+
+      {/* READABILITY GRADIENT */}
+      <div
+        className="absolute inset-0"
+        style={{
+          zIndex: 1,
+          background:
+            "linear-gradient(90deg, rgba(20,20,20,0.82) 0%, rgba(30,30,30,0.7) 50%, rgba(20,20,20,0.82) 100%)",
+        }}
+        aria-hidden="true"
+      />
+
+      {/* MAIN CONTENT */}
+      <div className="container relative z-10 mx-auto px-6 flex flex-col md:flex-row items-center justify-between">
+        {/* LEFT TEXT */}
+        <motion.div
+          className="md:w-1/2"
+          variants={textVariants}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true }}
+        >
+          <h1 className="text-4xl md:text-6xl font-bold leading-tight mb-4 text-white">
             Hi, I'm <span className="text-purple">Bhupendra Patil</span>
           </h1>
-          <h2 className="text-2xl md:text-4xl font-semibold mb-6 typewriter">
+
+          <h2 className="text-2xl md:text-4xl font-semibold text-purple mb-6">
             Full Stack Developer
           </h2>
-          <p className="text-lg text-gray-300 mb-8">
-            I create stunning web experiences with modern technologies and
-            innovative design.
+
+          <p className="text-lg text-gray-300 mb-8 max-w-md">
+            I build fast, responsive, and visually stunning web applications
+            using modern technologies and clean design principles.
           </p>
+
           <div className="flex space-x-4">
             <a
               href="#projects"
-              className="px-6 py-3 bg-purple rounded-lg font-medium hover:bg-purple-700 transition duration-300"
+              className="px-6 py-3 bg-purple text-white rounded-lg font-medium hover:bg-purple-700 transition duration-300 shadow-lg shadow-purple/30"
             >
               View Work
             </a>
+
             <a
               href="#contact"
-              className="px-6 py-3 border border-purple rounded-lg font-medium hover:bg-purple/20 transition duration-300"
+              className="px-6 py-3 border border-purple text-purple rounded-lg font-medium hover:bg-purple/20 transition duration-300"
             >
               Contact Me
             </a>
           </div>
-        </div>
+        </motion.div>
 
-        {/* right side image */}
-        <div className="md:w-1/2 flex justify-center">
-          <div className="relative w-64 h-64 md:w-80 md:h-80">
-            {/* Glowing gradient circle */}
-            <div className="absolute inset-0 rounded-full bg-gradient-to-r from-purple to-pink opacity-70 blur-xl"></div>
+        {/*     PREMIUM RIGHT IMAGE    */}
 
-            {/* Profile image (separate layer) */}
-            <motion.img
-              animate={{ y: [0, -20, 0] }}
-              transition={{
-                duration: 4,
-                repeat: Infinity,
-                repeatType: "loop",
-                ease: "easeInOut",
-              }}
-              className="relative rounded-full w-64 h-64 md:w-80 md:h-80 object-cover z-10 shadow-2xl"
-              src={assets.profileImg}
-              alt="Profile"
-            />
+        <div className="md:w-1/2 flex justify-center mt-12 md:mt-0">
+          <div className="relative w-72 h-80 md:w-96 md:h-[420px] group">
+            {/* Outer glow */}
+            <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-purple/40 via-pink/30 to-purple/40 blur-3xl opacity-80 group-hover:blur-[70px] transition-all duration-700"></div>
+
+            {/* Gradient border wrapper */}
+            <div className="relative rounded-3xl p-[3px] bg-gradient-to-br from-purple/70 via-pink/60 to-purple/70 shadow-2xl shadow-purple/30">
+              {/* Actual Profile Image */}
+              <motion.img
+                animate={floatAnimation}
+                src={assets.profileImg}
+                alt="Profile"
+                className="
+                  rounded-3xl w-full h-full object-cover 
+                  shadow-2xl 
+                  group-hover:scale-[1.02] 
+                  transition-all duration-500
+                "
+              />
+
+              {/* Glass reflection overlay */}
+              <div
+                className="
+                  absolute inset-0 rounded-3xl 
+                  bg-gradient-to-t from-transparent via-white/5 to-white/20 
+                  opacity-[0.1] pointer-events-none
+                "
+              ></div>
+            </div>
           </div>
         </div>
+
+        {/*         END IMAGE          */}
       </div>
-    </motion.div>
+    </section>
   );
 };
 
