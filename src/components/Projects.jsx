@@ -3,11 +3,12 @@ import { motion } from "framer-motion";
 import { FaArrowRight } from "react-icons/fa6";
 import ProjectCard from "./ProjectCard";
 
+// Project Data (can be moved to /src/data/projects.js if you want)
 const projects = [
   {
     title: "Stock Trading Platform",
     description:
-      "A full-stack MERN virtual trading platform with orders, funds, watchlist and charts.",
+      "A full-stack MERN virtual trading platform with orders, funds, watchlist, and charts.",
     image: "/stock.png",
     tech: ["React", "Node.js", "MongoDB", "Tailwind", "Redux"],
     demo: "https://stock-trading-platform-puce.vercel.app",
@@ -28,22 +29,23 @@ const projects = [
       "Travel listing website inspired by Airbnb with full CRUD and authentication.",
     image: "/wanderlust.png",
     tech: ["HTML", "CSS", "Node.js", "Express", "MongoDB"],
-    demo: "https://wanderlust-app-demo.vercel.app",
-    github: "https://wanderlust-hub.vercel.app/listings",
+    demo: "https://wanderlust-hub.vercel.app/listings",
+    github: "https://github.com/bhupendrapatil123/Wanderlust-App",
   },
 ];
 
 const Projects = () => {
   return (
     <motion.div
+      id="projects"
       initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 1, ease: "easeOut" }}
       viewport={{ once: false, amount: 0.2 }}
-      id="projects"
       className="py-20 bg-dark-200"
     >
-      <div className="container mx-auto px-6">
+      <div className="container mx-auto px-6 max-w-7xl">
+        {/* Heading */}
         <h2 className="text-3xl font-bold text-center mb-4">
           My <span className="text-purple">Projects</span>
         </h2>
@@ -53,16 +55,25 @@ const Projects = () => {
         </p>
 
         {/* Projects Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project, index) => (
-            <ProjectCard key={index} {...project} />
+            <motion.div
+              key={project.title}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: index * 0.12 }}
+            >
+              <ProjectCard {...project} alt={project.title} />
+            </motion.div>
           ))}
         </div>
 
         {/* View More Button */}
         <div className="text-center mt-12">
           <a
-            href="#"
+            href="https://github.com/bhupendrapatil123?tab=repositories"
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex items-center px-6 py-3 border border-purple rounded-lg font-medium hover:bg-purple/20 transition duration-300 text-purple"
           >
             <span>View More Projects</span>

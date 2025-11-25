@@ -2,9 +2,18 @@ import React from "react";
 
 const ProjectCard = ({ title, description, image, tech, demo, github }) => {
   return (
-    <div className="bg-dark-300 rounded-2xl overflow-hidden hover:-translate-y-2 hover:shadow-xl transition duration-300 cursor-pointer border border-dark-100">
+    <div
+      className="bg-dark-300 rounded-2xl overflow-hidden 
+      transition-all duration-300 cursor-pointer border border-dark-100 
+      hover:-translate-y-2 hover:shadow-xl hover:shadow-purple/10"
+    >
       {/* Image */}
-      <img src={image} alt={title} className="w-full h-56 object-cover" />
+      <img
+        src={image}
+        alt={title}
+        loading="lazy"
+        className="w-full h-56 object-cover"
+      />
 
       {/* Content */}
       <div className="p-6">
@@ -16,10 +25,13 @@ const ProjectCard = ({ title, description, image, tech, demo, github }) => {
 
         {/* Tech Badges */}
         <div className="flex flex-wrap gap-2 mb-5">
-          {tech.map((item, index) => (
+          {tech.map((item) => (
             <span
-              key={index}
-              className="text-xs px-3 py-1 rounded-full bg-dark-100 text-purple-300 border border-purple-500/20"
+              key={item}
+              className="text-xs px-3 py-1 rounded-full 
+              bg-dark-100 text-purple-300 
+              border border-purple/20 
+              shadow-sm shadow-purple/10"
             >
               {item}
             </span>
@@ -32,7 +44,11 @@ const ProjectCard = ({ title, description, image, tech, demo, github }) => {
             href={demo}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex-1 text-center px-4 py-2 bg-purple rounded-lg font-medium hover:bg-purple/80 transition duration-300"
+            aria-label={`View live demo of ${title}`}
+            className="flex-1 text-center px-4 py-2 
+            bg-purple rounded-lg font-medium 
+            hover:bg-purple/80 
+            transition duration-300"
           >
             View Demo
           </a>
@@ -41,7 +57,11 @@ const ProjectCard = ({ title, description, image, tech, demo, github }) => {
             href={github}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex-1 text-center px-4 py-2 border border-purple font-medium rounded-lg hover:bg-purple/20 transition duration-300"
+            aria-label={`View source code of ${title}`}
+            className="flex-1 text-center px-4 py-2 
+            border border-purple font-medium rounded-lg 
+            hover:bg-purple/20 
+            transition duration-300"
           >
             Code
           </a>
