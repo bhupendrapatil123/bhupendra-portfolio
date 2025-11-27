@@ -103,3 +103,10 @@ This portfolio highlights:
 │       └── Home.jsx
 ├── tailwind.config.js
 └── vite.config.js
+
+## ⚙️ Installation
+
+git clone https://github.com/your-username/your-portfolio.git
+cd your-portfolio
+npm install
+npm run dev
