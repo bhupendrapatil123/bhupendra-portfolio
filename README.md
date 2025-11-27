@@ -57,3 +57,49 @@ This portfolio highlights:
 - LinkedIn
 - Social profiles
 
+## 📂 Folder Structure
+
+.
+├── eslint.config.js
+├── index.html
+├── package.json
+├── package-lock.json
+├── postcss.config.js
+├── public
+│   ├── bookstore.png
+│   ├── logo.jpg
+│   ├── stock.png
+│   ├── vite.svg
+│   └── wanderlust.png
+├── README.md
+├── src
+│   ├── App.css
+│   ├── App.jsx
+│   ├── assets
+│   │   ├── assets.js
+│   │   ├── BhupendraPatil_Resume.pdf
+│   │   ├── logo.jpg
+│   │   ├── profile.avif
+│   │   ├── project1.avif
+│   │   ├── project2.avif
+│   │   ├── project3.avif
+│   │   ├── project4.avif
+│   │   ├── project5.avif
+│   │   ├── project6.avif
+│   │   └── react.svg
+│   ├── components
+│   │   ├── About.jsx
+│   │   ├── Contact.jsx
+│   │   ├── Footer.jsx
+│   │   ├── Hero.jsx
+│   │   ├── Navbar.jsx
+│   │   ├── ProjectCard.jsx
+│   │   ├── Projects.jsx
+│   │   ├── Skills.jsx
+│   │   └── StarfieldCanvas.jsx
+│   ├── index.css
+│   ├── main.jsx
+│   └── pages
+│       └── Home.jsx
+├── tailwind.config.js
+└── vite.config.js
