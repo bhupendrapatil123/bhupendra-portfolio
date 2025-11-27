@@ -5,3 +5,11 @@ This portfolio showcases my skills, major projects, experience, and professional
 
 ## Live Portfolio
 [Visit Portfolio](https://bhupendra-portfolio-cyan.vercel.app/)
+
+## Overview
+This portfolio highlights:
+- **Full Stack MERN Development Skills**
+- **Major live projects**
+- **Technical expertise**
+- **About me & contact details**
+- **Responsive and animated UI**
