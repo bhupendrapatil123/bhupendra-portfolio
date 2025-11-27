@@ -113,6 +113,8 @@ cd your-portfolio
 npm install
 npm run dev
 
+```
+
 ## 🚀 Build & Deployment
 
 ### Clone the repository
